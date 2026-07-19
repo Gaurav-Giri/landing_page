@@ -8,201 +8,308 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-        :root {
-            --primary-color: #2563eb;
-            --text-color: #1f2937;
-            --text-light: #6b7280;
-            --bg-color: #f9fafb;
-            --card-bg: #ffffff;
-            --border-radius: 8px;
-            --transition: all 0.3s ease;
-        }
+    :root {
+        --primary-color: #2563eb;
+        --primary-hover: #1d4ed8;
+        --text-color: #1f2937;
+        --text-light: #6b7280;
+        --bg-color: #f9fafb;
+        --card-bg: #ffffff;
+        --border-radius: 10px;
+        --transition: all 0.3s ease;
+    }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-        }
+    html {
+        scroll-behavior: smooth;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+    body {
+        font-family: 'Inter', sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: var(--bg-color);
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        padding: 0 20px;
+    }
+
+    section {
+        padding: 80px 0;
+        scroll-margin-top: 80px;
+    }
+
+    h1,
+    h2,
+    h3 {
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+
+    h1 {
+        font-size: 2.8rem;
+        font-weight: 700;
+    }
+
+    h2 {
+        font-size: 2rem;
+        font-weight: 600;
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        overflow-wrap: break-word;
+    }
+
+    p {
+        color: var(--text-light);
+        margin-bottom: 1rem;
+    }
+
+    a {
+        transition: var(--transition);
+    }
+
+    .btn {
+        display: inline-block;
+        background: var(--primary-color);
+        color: white;
+        padding: 12px 28px;
+        border-radius: var(--border-radius);
+        text-decoration: none;
+        font-weight: 600;
+        transition: var(--transition);
+    }
+
+    .btn:hover {
+        background: var(--primary-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2);
+    }
+
+    /* Hero */
+
+    .hero {
+        text-align: center;
+        padding: 120px 0;
+    }
+
+    .hero h1 {
+        margin-bottom: 15px;
+    }
+
+    .hero p {
+        max-width: 650px;
+        margin: 0 auto 30px;
+        font-size: 1.2rem;
+    }
+
+    /* About */
+
+    .about-content {
+        max-width: 850px;
+        margin: auto;
+        text-align: center;
+    }
+
+    /* Projects */
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+
+    .project-card {
+        background: var(--card-bg);
+        border-radius: 16px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+        transition: var(--transition);
+    }
+
+    .project-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+    }
+
+    .project-card p {
+        margin-bottom: 20px;
+    }
+
+    .project-link {
+        color: var(--primary-color);
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .project-link:hover {
+        color: var(--primary-hover);
+    }
+
+    /* Contact */
+
+    .contact-content {
+        text-align: center;
+        max-width: 700px;
+        margin: auto;
+    }
+
+    /* WEB3FORMS FORM STYLING */
+
+    form {
+        max-width: 500px;
+        margin: 40px auto;
+        padding: 30px;
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    form input,
+    form textarea {
+        width: 100%;
+        margin-bottom: 15px;
+        padding: 14px 16px;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        font-size: 15px;
+        font-family: inherit;
+        background: #f8fafc;
+        transition: var(--transition);
+    }
+
+    form input:focus,
+    form textarea:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        background: #fff;
+        box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+    }
+
+    form textarea {
+        min-height: 140px;
+        resize: vertical;
+    }
+
+    form button {
+        width: 100%;
+        border: none;
+        padding: 14px;
+        border-radius: 8px;
+        background: var(--primary-color);
+        color: white;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+    }
+
+    form button:hover {
+        background: var(--primary-hover);
+        transform: translateY(-2px);
+    }
+
+    /* Contact Links */
+
+    .contact-links {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        margin-top: 30px;
+        flex-wrap: wrap;
+    }
+
+    .contact-link {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .contact-link:hover {
+        color: var(--primary-hover);
+    }
+
+    /* Footer */
+
+    footer {
+        text-align: center;
+        padding: 40px 0;
+        border-top: 1px solid #e5e7eb;
+        color: var(--text-light);
+    }
+
+    /* Mobile */
+
+    @media (max-width: 768px) {
 
         section {
-            padding: 80px 0;
+            padding: 60px 0;
         }
 
-        h1, h2, h3 {
-            line-height: 1.2;
-            margin-bottom: 1rem;
+        .hero {
+            padding: 70px 0;
         }
 
         h1 {
-            font-size: 2.5rem;
-            font-weight: 600;
+            font-size: 2rem;
         }
 
         h2 {
-            font-size: 2rem;
-            font-weight: 500;
-            text-align: center;
-            margin-bottom: 3rem;
+            font-size: 1.7rem;
         }
 
-        h3 {
-            font-size: 1.25rem;
-            font-weight: 500;
-        }
-
-        p {
-            margin-bottom: 1rem;
-            color: var(--text-light);
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 12px 24px;
-            border-radius: var(--border-radius);
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
-        }
-
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 120px 0;
-        }
-
-        .hero h1 {
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-        }
-
-        /* About Section */
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        /* Projects Section */
         .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .project-card {
-            background-color: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 30px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .project-card h3 {
-            margin-bottom: 1rem;
-        }
-
-        .project-card p {
-            margin-bottom: 1.5rem;
-        }
-
-        .project-link {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .project-link:hover {
-            text-decoration: underline;
-        }
-
-        /* Contact Section */
-        .contact-content {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
+            grid-template-columns: 1fr;
         }
 
         .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 2rem;
-            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 15px;
         }
 
-        .contact-link {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
+        form {
+            padding: 20px;
+            margin: 30px auto;
+        }
+    }
+
+    @media (max-width: 480px) {
+
+        .container {
+            padding: 0 15px;
         }
 
-        .contact-link:hover {
-            text-decoration: underline;
+        h1 {
+            font-size: 1.8rem;
         }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 40px 0;
-            border-top: 1px solid #e5e7eb;
-            color: var(--text-light);
+        h2 {
+            font-size: 1.5rem;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-            
-            h2 {
-                font-size: 1.75rem;
-            }
-            
-            section {
-                padding: 60px 0;
-            }
-            
-            .hero {
-                padding: 80px 0;
-            }
-            
-            .contact-links {
-                flex-direction: column;
-                gap: 15px;
-            }
+        .project-card {
+            padding: 20px;
         }
+    }
     </style>
 </head>
 <body>
@@ -260,34 +367,17 @@
     <section id="contact">
         <div class="container">
             <h2>Get In Touch</h2>
-            <form action="https://web3forms.com" method="POST" style="max-width: 450px; margin: 40px auto; padding: 32px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
-    
-                <!-- Required Web3Forms Access Key -->
+
+        
+ 
+
+            <form action="https://api.web3forms.com/submit" method="POST">
                 <input type="hidden" name="access_key" value="27c08279-625d-4556-80b8-7e3d6482f80c">
-
-                <!-- Anti-Spam Honeypot Field (Hidden from real users) -->
-                <input type="checkbox" name="botcheck" style="display: none;">
-
-                <div style="margin-bottom: 24px;">
-                    <label for="name" style="display: block; margin-bottom: 8px; font-size: 14px; font-weight: 600; color: #334155; letter-spacing: 0.5px;">Full Name</label>
-                    <input type="text" name="name" required placeholder="John Doe" style="width: 100%; padding: 12px 16px; border: 1px solid #cbd5e1; border-radius: 8px; background: #f8fafc; color: #0f172a; font-size: 15px; outline: none; box-sizing: border-box; transition: all 0.2s ease;" onfocus="this.style.borderColor='#2563eb'; this.style.background='#ffffff'; this.style.boxShadow='0 0 0 3px rgba(37, 99, 235, 0.15)'" onblur="this.style.borderColor='#cbd5e1'; this.style.background='#f8fafc'; this.style.boxShadow='none'">
-                </div>
-
-                <div style="margin-bottom: 24px;">
-                    <label for="email" style="display: block; margin-bottom: 8px; font-size: 14px; font-weight: 600; color: #334155; letter-spacing: 0.5px;">Email Address</label>
-                    <input type="email" name="email" required placeholder="you@example.com" style="width: 100%; padding: 12px 16px; border: 1px solid #cbd5e1; border-radius: 8px; background: #f8fafc; color: #0f172a; font-size: 15px; outline: none; box-sizing: border-box; transition: all 0.2s ease;" onfocus="this.style.borderColor='#2563eb'; this.style.background='#ffffff'; this.style.boxShadow='0 0 0 3px rgba(37, 99, 235, 0.15)'" onblur="this.style.borderColor='#cbd5e1'; this.style.background='#f8fafc'; this.style.boxShadow='none'">
-                </div>
-
-                <div style="margin-bottom: 28px;">
-                    <label for="message" style="display: block; margin-bottom: 8px; font-size: 14px; font-weight: 600; color: #334155; letter-spacing: 0.5px;">Your Message</label>
-                    <textarea name="message" required placeholder="Type your message here..." style="width: 100%; min-height: 120px; padding: 12px 16px; border: 1px solid #cbd5e1; border-radius: 8px; background: #f8fafc; color: #0f172a; font-size: 15px; outline: none; box-sizing: border-box; resize: vertical; transition: all 0.2s ease;" onfocus="this.style.borderColor='#2563eb'; this.style.background='#ffffff'; this.style.boxShadow='0 0 0 3px rgba(37, 99, 235, 0.15)'" onblur="this.style.borderColor='#cbd5e1'; this.style.background='#f8fafc'; this.style.boxShadow='none'"></textarea>
-                </div>
-
-                <button type="submit" style="width: 100%; padding: 14px; border: none; border-radius: 8px; background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); color: #ffffff; font-size: 16px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2); transition: transform 0.1s ease, filter 0.2s ease;" onmouseover="this.style.filter='brightness(1.05)'" onmouseout="this.style.filter='none'" onmousedown="this.style.transform='scale(0.98)'" onmouseup="this.style.transform='scale(1)'">
-                    Send Message
-                </button>
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Message" required></textarea>
+                <button type="submit">Submit Form</button>
             </form>
-
 
             <div class="contact-content">
                 <p>Feel free to reach out if you'd like to collaborate on a project or just want to connect!</p>
